@@ -31,6 +31,14 @@ button:last-of-type {
     background-color: #ccc;
 }
 
+#noMessage {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #ff4d6d;
+  min-height: 1.2em; /* prevents layout jump */
+  transition: opacity 0.3s ease;
+}
+
 #slideshow {
     width: 100%;
     max-width: 280px;

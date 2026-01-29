@@ -6,11 +6,20 @@ const slideshowImages = [
     "pic5.jpeg",
     "pic6.HEIC",
     "pic7.jpg",
-    "pic8.HEIC"
+    "pic8.HEIC",
+    "pic8.jpeg",
+    "pic9.jpeg",
+    "pic10.jpeg",
+    "pic11.jpeg",
+    "pic12.jpeg",
+    "pic13.HEIC",
+    "pic14.HEIC",
 ];
 
 let currentSlide = 0;
 let slideshowInterval;
+let yesScale = 1;
+let noClicks = 0;
 
 function yesClicked() {
     document.getElementById("lovePopup").style.display = "block";
@@ -74,27 +83,34 @@ function startSlideshow() {
 
 
 function noClicked() {
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
+  const msg = document.getElementById("noMessage");
 
-let yesSize = 1; // scale factor for Yes button
+  noClicks++;
 
-// Function to move No button (desktop + mobile)
-function moveNoButton() {
-    // Move the No button
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 20);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 20);
-    noBtn.style.position = "absolute";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+  const noMessages = [
+    "Are you sure? 🥺",
+    "Come on… please? 💕",
+    "Don’t break my heart 😭",
+    "I’ll be really sad… 💔",
+    "Okay okay… just tap YES ❤️"
+  ];
 
-    // Alert
-    alert("Are you sure? 😅");
+  msg.textContent =
+    noMessages[Math.min(noClicks - 1, noMessages.length - 1)];
+  msg.style.opacity = "1";
 
-    // Grow the Yes button
-    yesSize += 0.1; // increase size by 10%
-    yesBtn.style.transform = `scale(${yesSize})`;
-}
+  // Move No button
+  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 20);
+  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 20);
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+
+  // Grow YES
+  yesScale += 0.12;
+  yesBtn.style.transform = `scale(${yesScale})`;
 
 // Desktop hover
 noBtn.addEventListener("mouseover", moveNoButton);
