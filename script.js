@@ -1,11 +1,11 @@
 const slideshowImages = [
     "picture.jpg",
     "pic2.jpeg",
-    "pic3.jpg",
-    "pic4.jpg", // add as many as you want
+    "pic3.jpeg",
+    "pic4.jpeg", // add as many as you want
     "pic5.jpeg",
     "pic6.HEIC",
-    "pic7.jpg",
+    "pic7.jpeg",
     "pic8.HEIC",
     "pic8.jpeg",
     "pic9.jpeg",
@@ -120,4 +120,5 @@ noBtn.addEventListener("touchstart", (e) => {
     e.preventDefault(); // prevent accidental click
     moveNoButton();
 });
+
 }
