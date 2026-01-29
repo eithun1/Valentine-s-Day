@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Website</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <h1>❤️ Will you be my Valentines ❤️😘😍</h1>
+
+    <button id="yesBtn" onclick="yesClicked()">Yes ❤️</button>
+    <button id="noBtn" onclick="noClicked()">No 😅</button>
+    
+    <!-- Custom popup -->
+<div id="lovePopup" class="popup">
+    <div class="popup-content">
+        <h2>YAY!!! 💖 I love you so much 😘❤️</h2>
+
+        <!-- Slideshow container -->
+        <img id="slideshow" src="picture.jpg" alt="Valentine's Photos">
+
+        <button onclick="closePopup()">Close 💕</button>
+    </div>
+</div>
+
+<div id="heartsContainer"></div>
+
+<!-- Background music -->
+<audio id="loveMusic" src="song.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
